@@ -1,0 +1,6 @@
+footer p {
+  color: var(--brand-light);
+  font-size: 1rem;
+  font-weight: var(--regular-font);
+  letter-spacing: .15rem;
+}

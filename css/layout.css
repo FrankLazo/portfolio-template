@@ -1,0 +1,25 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  padding-top: calc(var(--progress-height) + var(--header-height));
+  transition-property: padding-top;
+  transition-duration: var(--hide-header);
+  transition-timing-function: ease-in-out;
+}
+
+.main-section {
+  box-sizing: border-box;
+  height: 32rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-color: var(--brand-dark);
+}

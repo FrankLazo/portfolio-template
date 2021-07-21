@@ -1,0 +1,247 @@
+/* PROGRESS BAR */
+
+.progress-container {
+  position: relative; /* To use z-index */
+  width: 100%;
+  height: var(--progress-height);
+  background-color: var(--brand-dark);
+  z-index: var(--progress-index);
+}
+
+.progress-bar {
+  width: var(--progress-start);
+  height: 100%;
+  background-color: var(--brand-secondary);
+}
+
+/* HIDE HEADER */
+
+.header-content {
+  position: absolute; /* To use z-index */
+  display: flex;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--brand-dark);
+  z-index: var(--header-index);
+
+  transform: translateY(0%);
+  transition-property: transform;
+  transition-duration: var(--hide-header);
+  transition-timing-function: ease-in-out;
+}
+
+.hidden-header {
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: var(--hide-header);
+  transition-timing-function: ease-out;
+}
+
+.no-padding-main {
+  padding-top: var(--progress-height);
+  transition-property: padding-top;
+  transition-duration: var(--hide-header);
+  transition-timing-function: ease-out;
+}
+
+/* HEADER CONTENT */
+
+.brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--progress-start);
+}
+
+.brand {
+  color: var(--brand-light);
+  font-family: var(--brand-font);
+  font-size: 3rem;
+}
+
+.main-menu,
+.social-menu {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-left: 1px solid var(--brand-light);
+}
+
+.main-menu {
+  flex-grow: 1;
+}
+
+.social-menu {
+  width: 25%;
+  padding: 0 1rem;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover {
+  color: var(--brand-primary);
+}
+
+header ul {
+  display: flex;
+  width: 100%;
+}
+
+header ul li {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  list-style-type: none;
+}
+
+header ul a {
+  padding: .25rem;
+  color: var(--brand-light);
+  font-size: 1rem;
+  font-weight: var(--medium-font);
+  letter-spacing: .15rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+header path {
+  fill: var(--brand-light);
+}
+
+header svg:hover path {
+  fill: var(--brand-primary);
+}
+
+header li:last-child path {
+  fill: var(--brand-primary);
+}
+
+header li:last-child svg:hover path {
+  fill: var(--brand-secondary);
+}
+
+.burguer-menu {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.burguer-icon::before,
+.burguer-icon::after,
+.burguer-icon {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--brand-light);
+}
+
+.burguer-icon::before {
+  transform: translateY(-10px);
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
+
+.burguer-icon {
+  transform: translateY(14px);
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+
+.burguer-icon::after {
+  transform: translateY(6px);
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+
+.close-icon::before {
+  opacity: 0;
+}
+
+.close-icon {
+  transform: translateY(14px) rotate(-45deg);
+}
+
+.close-icon::after {
+  transform: translateY(-3px) rotate(90deg);
+}
+
+/* .burguer-icon {
+  margin-bottom: .5rem;
+} */
+
+@media screen and (max-width: 768px) {
+  .header-content {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-menu,
+  .social-menu {
+    /* display: none; */
+    position: absolute;
+    right: 0;
+    width: 50%;
+    border: none;
+    background-color: var(--brand-primary);
+    transform: translateX(100%);
+    transition-property: transform;
+    transition-duration: 500ms;
+  }
+  
+  .showMenu {
+    display: flex;
+    transform: translateX(0%);
+    transition-property: transform;
+    transition-duration: 500ms;
+  }
+
+  .social-menu {
+    top: var(--header-height);
+    height: var(--header-height);
+  }
+  
+  .main-menu {
+    top: calc(var(--header-height) + var(--header-height));
+  }
+  
+  .main-menu ul {
+    flex-direction: column;
+  }
+  
+  .main-menu li {
+    height: 4rem;
+  }
+
+  header ul li {
+    align-items: center;
+  }
+
+  header li:last-child path {
+    fill: var(--brand-secondary);
+  }
+  
+  header li:last-child svg:hover path {
+    fill: var(--brand-dark);
+  }
+
+  .burguer-menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brand {
+    font-size: 2rem;
+  }
+  
+  .main-menu,
+  .social-menu {
+    width: 100%;
+  }
+}

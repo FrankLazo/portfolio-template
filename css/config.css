@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  /* COLORS */
+
+  --default-black:  #000000;
+  --default-gray:   #888888;
+  --default-white:  #ffffff;
+
+  --brand-dark:       #2c2b2b;
+  --brand-primary:    #1389e6;
+  --brand-secondary:  #f9773b;
+  --brand-tertiary:   #ffea8c;
+  --brand-light:      #d2e5e7;
+
+  --banner-correction-1: #2c2b2bff;
+  --banner-correction-2: #2c2b2b00;
+
+  --profile-gradient: 1rem 1rem 1rem -.25rem #2c2b2b88;
+
+  /* FONTS */
+
+  --base-font: 'Jura', Helvetica, Arial, sans-serif;
+  --brand-font: 'Pacifico', Helvetica, Arial, sans-serif;
+  --light-font: 300;
+  --regular-font: 400;
+  --medium-font: 500;
+  --semi-bold-font: 600;
+  --bold-font: 700;
+
+  /* DIMENSIONS */
+
+  --progress-height: .5rem;
+  --header-height: 4rem;
+  --progress-start: 25%; /* Change value in script too */
+
+  /* TRANSITION TIMES */
+
+  --hide-header: 500ms;
+
+  /* INDEXES */
+  --progress-index: 1000;
+  --header-index: 500;
+}
